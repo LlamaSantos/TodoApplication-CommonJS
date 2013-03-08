@@ -1,5 +1,3 @@
-# TODO
-
 ##Setup
 * Firstly install node.js 0.8.*
 * Install Hogan.js and browserify globally
@@ -53,7 +51,7 @@ Again, this is scoped to the root of the project so adjust paths to whatever dir
 ###Intro
 This entire project is a JavaScript interpretation of Uncle Bobs epic talk entitled "Architecture the lost years".
 That can be found here:
-    ![Architecture the lost years][http://www.youtube.com/watch?v=WpkDN78P884]
+    ![Architecture the lost years](http://www.youtube.com/watch?v=WpkDN78P884)
 
 The things I tried to focus on from Uncle Bob's talk in this example is how to we separate UI from backend code, without
 the use of an explicit boundary.  JavaScript has no real inheritance pattern which means enforcing these boundaries
@@ -93,3 +91,18 @@ us the results.  The tests are done in a BDD manner in the test directory, and t
 bus mocked data can be plainly seen.
 
 ###Operations
+...
+
+###Feedback
+...
+
+###License
+(The MIT License)
+
+Copyright (c) 2012 James R. White
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
