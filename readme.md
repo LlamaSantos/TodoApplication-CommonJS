@@ -72,19 +72,21 @@ that is injected down into the system as a dependency.  Also DOM manipulation is
 All other data manipulations must be DOMless.  This gives a massive performance boost in the UI in being able to wholely replace
 any section of DOM due to the heavy performance implications of a singular DOM interaction.
 
-###Why
-I wanted to see a native JavaScript implementation, based on JavaScript principles rather than an interpretation based in
-a wholey Object Oriented Language like Java or C#.  This project makes use of events and callbacks which JavaScript is very
-adept at using, and seeks to do so through a global application bus.  The bus is the <i>Boundary<i> that Uncle Bob talks about.
+###Why?
+I wanted to see a native JavaScript implementation browser based applicaion, based on JavaScript principles rather than
+an interpretation based in a wholey Object Oriented Language like Java, C#, or Python.  This project makes use of events
+and callbacks which JavaScript is very adept at using, and seeks to do so through a global application bus.
 
 ###Boundary
-Since UI and Controller must be separated and configured to not know exactly about one another, the bus boundary creates that
+UI and Controller must be separated and configured to not know exactly about one another, the bus boundary creates that
 eligantly.  JavaScript lacks a strong type system, and what little there is can be easily manipulated and fooled thus making it
 unreliable.  The bus however works based on a protocol, a tuple of event name and arguments.  This can be easily defined
-and tapped into making a strong separation between the two aforementioned tiers.  The result of this is a lose coupling
-that we can readily take advantage of in separating the tiers.  Since UI code is expensive to test relative to unit, integration,
-system, isolation, etc tests make available through test automation frameworks, we make no attempt to test that segment.  If a UI
-interaction is wrong we can rectify that, however business rules in a browser based application need rigorously more testing.
+and leveraged into making a strong separation between the two tiers.  The result of this is a lose coupling
+that we can readily take advantage of in separating the tiers.
+
+UI code is expensive to test relative to unit, integration, system, isolation, etc tests make available through test automation
+frameworks, we make no attempt to test that segment.  If a UI interaction is wrong we can rectify that, however business
+rules in a browser based application need rigorously more testing.
 
 The boudnary affords us the ability to test business code by emiting data such as the UI would do over a bus and giving
 us the results.  The tests are done in a BDD manner in the test directory, and this concept of mocking and emitting over the
