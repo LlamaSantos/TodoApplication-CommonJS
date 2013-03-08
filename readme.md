@@ -93,7 +93,8 @@ us the results.  The tests are done in a BDD manner in the test directory, and t
 bus mocked data can be plainly seen.
 
 ###Operations
-...
+Operations are business operations.  The environment as to where it runs client or server should not be able to be
+determined from looking at.
 
 ###Feedback
 ...
