@@ -51,7 +51,7 @@ Again, this is scoped to the root of the project so adjust paths to whatever dir
 ###Intro
 This entire project is a JavaScript interpretation of Uncle Bobs epic talk entitled "Architecture the lost years".
 That can be found here:
-    ![Architecture the lost years](http://www.youtube.com/watch?v=WpkDN78P884)
+    http://www.youtube.com/watch?v=WpkDN78P884
 
 The things I tried to focus on from Uncle Bob's talk in this example is how to we separate UI from backend code, without
 the use of an explicit boundary.  JavaScript has no real inheritance pattern which means enforcing these boundaries
