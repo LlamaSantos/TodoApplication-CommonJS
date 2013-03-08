@@ -7,6 +7,12 @@
         "hogan-express" : "*",
         "EventEmitter2" : "*",
         "underscore" : "*",
-        "hogan.js" : "*"
+        "hogan.js" : "*",
+        "nodeject" : "*"
+    },
+    "browser" : {
+        "./todo/controller.js" : "./lib/todo/todoController.js",
+        "./todo/operations.js" : "./lib/todo/todoOperations.js",
+        "./todo/presenter.js" : "./lib/todo/todoPresenter.js"
     }
 }
