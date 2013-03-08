@@ -11,8 +11,8 @@
         "nodeject" : "*"
     },
     "browser" : {
-        "./todo/controller.js" : "./lib/todo/todoController.js",
-        "./todo/operations.js" : "./lib/todo/todoOperations.js",
-        "./todo/presenter.js" : "./lib/todo/todoPresenter.js"
+        "./todo/controller.js" : "./features/todo/todoController.js",
+        "./todo/operations.js" : "./features/todo/todoOperations.js",
+        "./todo/presenter.js" : "./features/todo/todoPresenter.js"
     }
 }
