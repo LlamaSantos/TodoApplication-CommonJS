@@ -72,7 +72,7 @@ var TodoOperation = (function (){
 
                             var scope = store.get("todo") || [];
                             var item = _(scope).find(function (i){
-                                return i.id == item.id;
+                                return i.id === item.id;
                             });
 
                             done(null, (item ? clone(item) : null));
