@@ -41,7 +41,7 @@ var TodoPresenter = (function (){
         // Edit a selected element
         $("body").on("click", ".js-todo-edit", function (){
             var id = $(this).attr("data-id");
-            bus.emit("todo::get", {id: id}, function (err, item){
+            bus.emit("todo::getItem", {id: id}, function (err, item){
                 console.info(item);
 
                 $(".app-root").append(tmpl.todoEditModal.render(item));
@@ -74,7 +74,7 @@ var TodoPresenter = (function (){
         // Delete a selected element
         $("body").on("click", ".js-todo-remove", function (){
             var id = $(this).attr("data-id");
-            bus.emit("todo::get", {id: id}, function (err, item){
+            bus.emit("todo::getItem", {id: id}, function (err, item){
                 console.info(item);
 
                 $(".app-root").append(tmpl.todoRemoveModal.render(item));

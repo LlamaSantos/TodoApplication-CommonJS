@@ -67,7 +67,7 @@ var TodoOperation = (function (){
 
                         done(null, clone(scope));
                     },
-                    get : function get(item, done){
+                    getItem : function getItem(item, done){
                         if ('id' in item){
 
                             var scope = store.get("todo") || [];

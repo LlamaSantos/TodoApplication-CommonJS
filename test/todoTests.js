@@ -1,5 +1,7 @@
 var assert = require("assert");
 var _ = require("underscore");
+var EventEmitter2 = require("eventemitter2").EventEmitter2;
+var Nodeject = require("nodeject");
 
 var Store = (function (){
     "use strict";
@@ -96,7 +98,49 @@ describe("TodoApplication-CommonJS", function (){
                     assert.equal(items.length, 2);
                 })
             });
-            it ("should get an item by id");
-        })
-    })
-})
+            it ("should getItem an item by id", function (){
+                ops.add({name : "foo", description: ""}, noop);
+//                ops.getItem({id: 1}, function (err, item){
+//                    assert.equal(item.id, 1);
+//                });
+            });
+        });
+        describe("Todo controller", function (){
+            var TodoController = require("../features/todo/TodoController.js");
+            var TodoOperations = require("../features/todo/TodoOperations.js");
+
+            // -- Create a container to be resolved in each test with new items.
+            var container = new Nodeject();
+            container.define({name: "store", type: Store.create})
+                .define({ name : "_", type: function () { return _; }})
+                .define({ name : "bus", type: function (){
+                    return new EventEmitter2({ delimeter : "::", wildcard: "*"})
+                }})
+                .define({ name: "operations", type: TodoOperations.create, deps: ["_", "store"]})
+                .define({ name: "controller", type: TodoController.create, deps: ["_", "bus", "operations"]});
+
+            var controller = null;
+            var bus = null;
+            beforeEach(function (){
+                bus = container.resolve("bus");
+                var ops = container.resolve("operations");
+                controller = TodoController.create(_, bus, ops);
+            });
+
+            it ("should return items when added.", function (){
+                var item = { name : "item1", description: "empty"};
+
+                bus.emit("todo::add", item, function (err, items){
+                    assert.equal(items.length, 1);
+                    assert.equal(err, null);
+                });
+            });
+            it ("should return items when updated.", function (){
+
+            });
+            it ("should return items when listed.");
+            it ("should get a single item when requested.");
+            it ("should return items when an item is removed.");
+        });
+    });
+});

@@ -45,14 +45,13 @@ var TodoController = (function (){
             });
 
             // -- Wireup fetching a single item
-            bus.on("todo::get", function (data, presenter){
-                ops.get(data, function (err, item){
+            bus.on("todo::getItem", function (data, presenter){
+                ops.getItem(data, function (err, item){
                     presenter(err, item);
                 });
             });
 
             // -- Wireup listing of all items
-            debugger
             bus.on("todo::list", function (presenter){
                 ops.list(function (err, items){
                     presenter(err, items);
