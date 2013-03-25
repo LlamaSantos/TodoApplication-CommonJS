@@ -28,10 +28,10 @@
         .define({ name : "todoPresenter",  type : TodoPresenter.create, category : "presenters", deps: ["jquery", "_", "bus", "templates"]})
         .define({ name : "startup",      type: function (app){
             // Initialize the Presenters
-            app.presenters = container.define({ category : "presenters", format : "literal" });
+            app.presenters = container.resolve({ category : "presenters", format : "literal" });
 
             // Initialize the controllers
-            app.controllers = container.define({ category : "controllers", format : "literal" });
+            app.controllers = container.resolve({ category : "controllers", format : "literal" });
 
             // Assign the container
             win.app.container = container;
