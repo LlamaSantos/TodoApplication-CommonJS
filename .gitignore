@@ -3,3 +3,7 @@ node_modules
 
 .idea
 ./.idea
+
+##Do not track browser.js or templates.js
+./public/browser.js
+./public/templates.js
